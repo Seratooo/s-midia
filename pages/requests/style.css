@@ -1,0 +1,317 @@
+.MainContent{
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.Wrapper_pubs{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  gap: 10px;
+  width: 100%;
+  padding: 20px;
+}
+
+.Wrapper_pubs .selectDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Wrapper_pubs .selectDiv label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+@media (max-width:768px){
+  .Wrapper_pubs{
+    width: 100%;
+  }
+}
+.Wrapper_pubs ul{
+  background-color:#2b2b2f;
+  border-radius: 7px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Wrapper_pubs ul li{
+  list-style: none;
+  background-color: #c4c4c4;
+  padding: 10px 40px;
+  border-radius: 20px;
+  margin: 1.5rem;
+  box-shadow: 1px 3px 4px rgb(0 0 0 / 45%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.Wrapper_pubs ul li button.btnComentar{
+  background-color: #DE2668;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 7px;
+  margin-right: 0;
+  color: white;
+  align-self: flex-end;
+  box-shadow: 1px 3px 4px rgb(0 0 0 / 45%);
+}
+.Wrapper_pubs ul li input#comentario{
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+.Wrapper_pubs ul li .coments{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Wrapper_pubs ul li .coments .wrapper_coment{
+  background: #b6b5b5;
+   padding: 7px 20px;
+  border-radius: 7px;
+}
+.Wrapper_pubs ul li .coments .wrapper_coment p{
+  margin: 0;
+}
+.Wrapper_pubs ul li .coments .wrapper_coment p.NameComent{
+  font-weight: 700;
+}
+.Wrapper_pubs ul li a img{
+  width: 100%;
+  border-radius: 7px;
+}
+.Wrapper_pubs ul li audio{
+  width: 100%;
+}
+.Wrapper_pubs ul li video{
+  width: 100%;
+}
+.Wrapper_pubs{
+  color: #2b2b2f;
+}
+.Wrapper_pubs ul li p.NomePub{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.labelformArquivo{
+  cursor: pointer;
+}
+.Radiobuttons input[type="radio"]{
+  cursor: pointer;
+}
+.loading-container{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.82);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  z-index: 999999;
+  display: none;
+}
+
+.loading-container p.carregando{
+  display: flex;
+  align-items: center;
+  color: black;
+  background: white;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 3px 4px rgb(0 0 0 / 45%);
+}
+.loading-container p.carregando svg{
+  margin: 0;
+}
+
+.loading-container p.concluido{
+  display: flex;
+  text-align: center;
+  color: black;
+  background: white;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 3px 4px rgb(0 0 0 / 45%);
+  display: none;
+}
+.loading-container p.concluido button{
+  border: none;
+  border-radius: 7px;
+  color: white;
+  background-color: #DE2668;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.Wrapper_pubs ul li.active{
+  background-color: #605c5c;
+}
+
+#createMyList{
+  position: fixed;
+  bottom: 1.8rem;
+  right: 7rem;
+  background-color: #DE2668;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 27px;
+  z-index: 999999999;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.676);
+  display: none;
+}
+
+@media(max-width:425px){
+  #createMyList{
+    bottom: 2.3rem;
+  }
+}
+
+.Container_List{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.82);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  z-index: 99999999999;
+  display: none;
+}
+.Wrapper_List{
+  background-color: white;
+  padding: 20px;
+  width: 30%;
+  height: 40vh;
+  border-radius: 7px;
+  box-shadow: 2px 1px 9px 2px rgba(0, 0, 0, 0.608);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  
+}
+
+.Wrapper_List .btnOption{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Wrapper_List .RadiosLista input{
+  cursor: pointer;
+}
+.Wrapper_List .btnOption button{
+  padding: 20px;
+  border: none;
+  border-radius: 7px;
+  background-color: #DE2668;
+  color: white;
+  font-size: 1.4rem;
+  box-shadow: 1px 3px 4px 4px rgba(0, 0, 0, 0.171);
+  transition: all 0.5s;
+}
+.Wrapper_List .btnOption button.btnCancelar{
+  background-color:#2b2b2f;
+}
+.Wrapper_List .btnOption button:hover{
+  background-color: #6e1234;
+}
+
+.Wrapper_List #txtLista{
+  padding: 20px !important;
+}
+.Wrapper_List label.lbLista.active{
+  top: 0.3rem !important;
+}
+
+#groupsMelody{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#btnCreateGroup{
+  background-color: #2b2b2f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 7px;
+  box-shadow: 1px 3px 4px rgb(0 0 0 / 45%);
+}
+
+.ContentCreateGroup{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.82);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  z-index: 999999;
+  display: none;
+}
+
+.ContentCreateGroup .CreateGroupWrapper{
+  background-color: white;
+  padding: 20px;
+  width: 30%;
+  height: 40vh;
+  border-radius: 7px;
+  box-shadow: 2px 1px 9px 2px rgba(18, 18, 18, 0.208);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.ContentCreateGroup .CreateGroupWrapper #groupName{
+  padding: 20px;
+  margin: 5px;
+  border: 1px solid #ededed;
+  border-radius: 7px;
+}
+.ContentCreateGroup .CreateGroupWrapper #addGroup{
+  cursor: pointer;
+}
+.ContentCreateGroup .CreateGroupWrapper button#btnCancelarGroup{
+  background-color: #2b2b2f;
+}
+.ContentCreateGroup .CreateGroupWrapper button{
+  background-color: #DE2668;
+  color: white;
+  padding: 20px;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 1px 3px 4px rgb(0 0 0 / 45%);
+}
+.ContentCreateGroup .CreateGroupWrapper button:hover{
+  background-color: #6e1234;
+}
+
+tr.groupTbrow{
+  display:flex; 
+  justify-content: space-between; 
+  padding: 0 20px;
+}
+td.groutTbline{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
