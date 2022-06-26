@@ -238,3 +238,9 @@
 .Wrapper_List label.lbLista.active{
   top: 0.3rem !important;
 }
+@media(max-width:425px){
+  html{
+    font-size: 72.5%;
+  }
+
+}

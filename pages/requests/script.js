@@ -24,8 +24,8 @@ function getUsers(){
           const td = document.createElement('td');
           td.classList.add('align-middle');
           const a = document.createElement('a');
-          a.innerText='Adicionar';
           
+          a.innerText='Adicionar';
         
 
           firebase.firestore().collection('Data').doc(localStorage.getItem('Email')).get()
@@ -37,19 +37,33 @@ function getUsers(){
               for(let Amigos in Data.Amizade){
                
                 //Acitar pedido
-              
-                if(!Data.Amizade[Amigos].TipoRequisicao.includes('Amigo')){
+                // console.log(""+Data.Amizade[Amigos].TipoRequisicao+"Para email= "+Data.Amizade[Amigos].ParaEmail);
+                // if(!Data.Amizade[Amigos].TipoRequisicao.includes('Amigo')){
 
+                //   if(Data.Amizade[Amigos].DeEmail == TheEmail){
+                //     a.innerHTML=Data.Amizade[Amigos].TipoRequisicao;
+                //     }
+                  
+                //   //Adicionados
+                //   if(Data.Amizade[Amigos].ParaEmail == TheEmail){
+                //       a.innerHTML=Data.Amizade[Amigos].TipoRequisicao;
+                //     }
+                // }else{
+                //   a.innerHTML=Data.Amizade[Amigos].TipoRequisicao;
+                // }
+
+                if(Data.Amizade[Amigos].Owner == Data.Amizade[Amigos].DeEmail){
+                  
+                  if(Data.Amizade[Amigos].ParaEmail == TheEmail){
+                    a.innerHTML=Data.Amizade[Amigos].TipoRequisicao;
+                  }
+                }
+
+                if(Data.Amizade[Amigos].Owner == Data.Amizade[Amigos].ParaEmail){
+                  
                   if(Data.Amizade[Amigos].DeEmail == TheEmail){
                     a.innerHTML=Data.Amizade[Amigos].TipoRequisicao;
-                    }
-                  
-                  //Adicionados
-                  if(Data.Amizade[Amigos].ParaEmail == TheEmail){
-                      a.innerHTML=Data.Amizade[Amigos].TipoRequisicao;
-                    }
-                }else{
-                  a.innerHTML=Data.Amizade[Amigos].TipoRequisicao;
+                  }
                 }
 
 
@@ -302,6 +316,8 @@ function getUsers(){
                    }
                  })
                })
+              }else{
+                loadingContainer.style.display='none';
               }
 
           });
@@ -392,9 +408,11 @@ btnCreateGroup.addEventListener("click",function(){
           `
 
           a.addEventListener("click",function(){
-          // const email = a.getAttribute('Email')
+          const NomeOfGrupo = inputGroupName.value;
+          const id = Math.floor(Date.now() * Math.random()).toString(36);
+
           const data = {
-              NomeGrupo: inputGroupName.value,
+              NomeGrupo: NomeOfGrupo+" (id:"+id+")",
               DonoEmail: localStorage.getItem('Email'),
               DonoNome: localStorage.getItem('Name'),
               Integrantes:{

@@ -156,12 +156,6 @@
   display: none;
 }
 
-@media(max-width:425px){
-  #createMyList{
-    bottom: 2.3rem;
-  }
-}
-
 .Container_List{
   position: fixed;
   background-color: rgba(0, 0, 0, 0.82);
@@ -228,15 +222,21 @@
 
 @media(max-width:425px){
   html{
-    font-size: 80.5%;
+    font-size: 62.5%;
   }
   #txtConteudo{
     height: 170px;
   }
   .Wrapper_pubs ul li{
     margin: 1.5rem 0;
+    padding: 8px;
   }
-  .Radiobuttons span label{
-    
+  .Wrapper_pubs{
+    padding: 0;
+  }
+  #createMyList {
+    bottom: 3rem;
+    right: 8rem;
+    padding: 12px 30px;
   }
 }

@@ -43,8 +43,8 @@
 .Wrapper_pubs ul li{
   list-style: none;
   background-color: #c4c4c4;
-  padding: 10px 40px;
-  border-radius: 20px;
+  padding: 10px 30px;
+  border-radius: 7px;
   margin: 1.5rem;
   box-shadow: 1px 3px 4px rgb(0 0 0 / 45%);
   cursor: pointer;
@@ -175,11 +175,6 @@
   display: none;
 }
 
-@media(max-width:425px){
-  #createMyList{
-    bottom: 2.3rem;
-  }
-}
 
 .Container_List{
   position: fixed;
@@ -237,4 +232,29 @@
 }
 .Wrapper_List label.lbLista.active{
   top: 0.3rem !important;
+}
+
+@media(max-width:425px){
+  html{
+    font-size: 62.5%;
+  }
+  .Wrapper_pubs ul{
+    border-radius: 0px;
+    padding: 0;
+  }
+  .Wrapper_pubs ul li{
+    padding: 8px;
+    margin: 1.5rem 0;
+  }
+  #txtConteudo{
+    height: 170px;
+  }
+  .Wrapper_pubs{
+    padding: 0;
+  }
+  #createMyList {
+    bottom: 3rem;
+    right: 8rem;
+    padding: 12px 30px;
+  }
 }
