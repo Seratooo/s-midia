@@ -108,12 +108,12 @@ firebase.firestore().collection('Grupos').get().then(snapshot=>{
           ulList.append(li);
     
             }else{
-              ulList.innerHTML='';
-              let li = document.createElement('li');
-              let pText = document.createElement('p');
-              pText.innerText='Voce ainda não adiriu um grupo!!';
-              li.append(pText);
-              ulList.append(li);
+              // ulList.innerHTML='';
+              // let li = document.createElement('li');
+              // let pText = document.createElement('p');
+              // pText.innerText='Voce ainda não adiriu um grupo!!';
+              // li.append(pText);
+              // ulList.append(li);
             }
            }
 
