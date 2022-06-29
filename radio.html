@@ -35,6 +35,11 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
+  <style>
+    div#MusesRadioPlayer-HTML5-player-0{
+      left: 29.5%;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -434,7 +439,7 @@
   <div class="loading-container">
       <div class="loading-wrpper">
         <p class="carregando">
-          carregando...
+          Radio Luanda Online...
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: none; shape-rendering: auto;" width="70px" height="70px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
           <circle cx="50" cy="23" r="13" fill="#de2668">
             <animate attributeName="cy" dur="1.1764705882352942s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" keyTimes="0;0.5;1" values="23;77;23"></animate>
@@ -540,6 +545,24 @@
 
   <script src="./database/server.js"></script>
   <!-- <script src="./pages/groups/script.js" type="module"></script> -->
+  <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+<script type="text/javascript">
+MRP.insert({
+'url':'https://paineldj5.com.br:20089/stream',
+'lang':'pt',
+'codec':'mp3',
+'volume':50,
+'autoplay':false,
+'jsevents':true,
+'buffering':0,
+'title':'Radio Luanda',
+'welcome':'Seja Bem vindo',
+'wmode':'transparent',
+'skin':'mcclean',
+'width':180,
+'height':60
+});
+</script>
 </body>
 
 </html>
