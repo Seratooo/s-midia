@@ -1,6 +1,8 @@
-import {_Init} from '../main/script.js'
+import {_Init, logout} from '../main/script.js'
 var notificacoesConteiner = document.getElementById('notificacoesConteiner');
 let isContent;
+const btnSairHeader = document.getElementById('btnSairHeader');
+
 
 _Init();
 
@@ -105,3 +107,5 @@ firebase.firestore().collection('Data').doc(localStorage.getItem('Email')).colle
 //   if(object.type == 'removed'){
 //   }
 // })
+
+btnSairHeader.addEventListener('click',logout);

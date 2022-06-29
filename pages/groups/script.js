@@ -1,5 +1,6 @@
-import {_Init} from '../main/script.js'
+import {_Init, logout} from '../main/script.js'
 var ulList = document.querySelector('.Wrapper_pubs ul');
+const btnSairHeader = document.getElementById('btnSairHeader');
 _Init();
 
 
@@ -122,3 +123,5 @@ firebase.firestore().collection('Grupos').get().then(snapshot=>{
           
       })
     }) 
+
+    btnSairHeader.addEventListener('click',logout);

@@ -1,4 +1,4 @@
-import {_Init} from '../main/script.js'
+import {_Init, logout} from '../main/script.js'
 let users = document.getElementById('users');
 var loadingContainer = document.querySelector('.loading-container');
 var loadingCarregando = document.querySelector('.loading-container p.carregando');
@@ -10,6 +10,7 @@ var inputGroupName = document.getElementById('groupName');
 var usersGroup = document.getElementById('usersGroup');
 var btnConcluirGroup = document.getElementById('btnConcluirGroup');
 var group;
+const btnSairHeader = document.getElementById('btnSairHeader');
 var groupTable = document.getElementById('groupTable');
 _Init();
 
@@ -571,3 +572,5 @@ function getGroup(){
   })
 }
 getGroup();
+
+btnSairHeader.addEventListener('click',logout);

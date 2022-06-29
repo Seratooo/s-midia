@@ -1,4 +1,4 @@
-import {_Init} from '../main/script.js'
+import {_Init, logout} from '../main/script.js'
 const txtArea = document.getElementById('txtConteudo');
 const btnPublicar = document.getElementById('btnPublicar');
 const rbPriv = document.getElementById('rbPriv');
@@ -21,6 +21,7 @@ var listContainer = document.querySelector('.Container_List');
 var inputLista = document.querySelector('#txtLista');
 const divRadios = document.querySelector('.Radiobuttons');
 const rbPubList = document.getElementById('rbPubList');
+const btnSairHeader = document.getElementById('btnSairHeader');
 
 var group;
 _Init();
@@ -565,3 +566,4 @@ function addPub(){
 
 
 btnPublicar.addEventListener("click",addPub);
+btnSairHeader.addEventListener('click',logout);

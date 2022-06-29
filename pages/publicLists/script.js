@@ -1,5 +1,5 @@
-import {_Init} from '../main/script.js'
-
+import {_Init, logout} from '../main/script.js'
+const btnSairHeader = document.getElementById('btnSairHeader');
 const Wrapper_pubs = document.querySelector('.Wrapper_pubs ul');
 _Init();
 
@@ -127,3 +127,6 @@ firebase.firestore().collection('ListasPublicas').orderBy('DataLista','desc').ge
         Wrapper_pubs.append(li);
       })
     })   
+
+
+btnSairHeader.addEventListener('click',logout);
