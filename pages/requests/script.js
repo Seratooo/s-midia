@@ -498,6 +498,7 @@ function getGroup(){
         const tr = document.createElement('tr');
         const td = document.createElement('td');
         tr.classList.add('groupTbrow')
+        tr.setAttribute('referenceId',object.id);
         td.classList.add('groutTbline');
         const a = document.createElement('a');
         a.id= 'btnAderirGroup';
@@ -508,16 +509,14 @@ function getGroup(){
         
 
         let elementGroup=`    
-          <div class="" style="display:flex; align-items: center;">
+          <div class="" style="display:flex; align-items: center; cursor: pointer;">
             <div>
               <img src="../assets/img/group.png" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
             </div>
             <div class="my-auto">
               <h6 class="mb-0 text-sm">${Data['data'].NomeGrupo}</h6>
             </div>
-          </div>
-        </td>
-        <td class="align-middle">
+          </div
         `
 
         a.addEventListener("click",function(){
@@ -553,6 +552,58 @@ function getGroup(){
 
         td.innerHTML=elementGroup;
         
+        tr.onclick = function(){
+
+          if(!tr.childNodes[0].childNodes[2]){
+
+            firebase.firestore().collection('Grupos').doc($(tr).attr('referenceId')).collection('Mensagens').get().then(snapshot=>{
+            
+              $('.chatGroup-wrapper .Messages ul').html('');
+              snapshot.docs.forEach(object=>{
+               const data = object.data();
+
+                $('.chatGroup-wrapper .Messages ul').append(`
+                    <li>
+                      <label for="" style="color: white;">${data.Nome}</label>
+                      <p style="color: white;">${data.Mensagem}</p>
+                    </li>
+                `);
+              })
+            });
+
+
+            $('.chatGroup').css('display','flex');
+  
+            $('.chatGroup-wrapper .closeIcon').on('click',function(){
+              $('.chatGroup-wrapper button').off('click');
+              $('.chatGroup').css('display','none');
+            })
+
+            $('.chatGroup-wrapper button').on('click',function(){
+              
+              const message = $('.chatGroup-wrapper input').val();
+
+              const dados = {
+                Nome: localStorage.getItem('Name'),
+                Mensagem: message
+              }
+              
+              firebase.firestore().collection('Grupos').doc($(tr).attr('referenceId')).collection('Mensagens').add(dados).then(()=>{
+                  
+                $('.chatGroup-wrapper .Messages ul').prepend(`
+                  <li>
+                    <label for="" style="color: white;">${localStorage.getItem('Name')}</label>
+                    <p style="color: white;">${message}</p>
+                  </li>
+                  `);
+
+                  $('.chatGroup-wrapper input').val('');
+              })
+
+            })
+          }
+        }
+
         if(UserOn != Data['data'].DonoEmail){
           td.append(a);
           for(let user in Data['data'].Integrantes){
@@ -574,3 +625,16 @@ function getGroup(){
 getGroup();
 
 btnSairHeader.addEventListener('click',logout);
+
+const lbMessage = document.querySelectorAll('.chatGroup-wrapper .Messages ul li label');
+
+lbMessage.forEach(nameMessager=>{
+
+  if($(nameMessager).text() === localStorage.getItem('Name')){
+    $(nameMessager).css('color','white');
+    $(nameMessager.nextElementSibling).css('color','white');
+
+  };
+
+})
+
