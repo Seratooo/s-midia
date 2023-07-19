@@ -1,6 +1,6 @@
 # Sistema de Compartilhamento de Mídia
 s-midia, é um sistema de compartilhamento de mídia desenvolvido em Javascript. 
-Nele é possivel partilhar publicações de textos, imagens, criar grupos de partilha 
+Nele é possivel partilhar publicações de textos, imagens, audios, criar grupos de partilha 
 de conteúdos, adicionar amizades ouvir a rádio local de luanda e muito mais.
 
 Acesso em [melody.app](https://melody-ecru.vercel.app/)
